@@ -47,3 +47,26 @@ function employeeType(){
         }
     )
     }
+
+    //added emplotee roles    
+function employeeByRole(response){
+        console.log(response)
+    if(response["Employee-Role"] == "Intern"){
+        return inquirer.prompt(
+            {
+                type: "input",
+                message: "School:",
+                name: "school"
+            }
+        )
+    }
+    else if(response["Employee-Role"]  == "Engineer"){
+        return inquirer.prompt(
+            {
+                type:"input",
+                message:"GitHub:",
+                name:"github"
+            }
+        )
+    }
+}
