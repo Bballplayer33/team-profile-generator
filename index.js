@@ -5,7 +5,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const OUTPUT_DIR = path.resolve(__dirname, "");
+const OUTPUT_DIR = path.resolve(__dirname, "dist");
 const render = require("./lib/createHTML");
 
 let employeeArray = [];
@@ -122,7 +122,7 @@ createEmployee().then(response =>{
                        }
                        else{
                             const html = render(employeeArray)
-                            fs.writeFile("", html, err =>{
+                            fs.writeFile("dist/index.html", html, err =>{
                                 if(err) throw err
                             })
                        }
