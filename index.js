@@ -6,6 +6,8 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+let employeeArray = [];
+
 
 function createEmployee(){
     return inquirer.prompt(
@@ -50,7 +52,7 @@ function employeeType(){
 
     //added emplotee roles    
 function employeeByRole(response){
-        console.log(response)
+       // console.log(response)
     if(response["Employee-Role"] == "Intern"){
         return inquirer.prompt(
             {
