@@ -70,3 +70,14 @@ function employeeByRole(response){
         )
     }
 }
+
+//loop to see if you want to add more
+function finishEmployees(){
+    return inquirer.prompt(
+        {
+            type: "confirm",
+            message: "Do you want to make another Employee?",
+            name: "continue"
+        }
+    )
+} 
