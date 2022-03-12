@@ -118,7 +118,7 @@ createEmployee().then(response =>{
                        }
                        else{
                             const html = render(employeeArray)
-                            fs.writeFile("output/index.html", html, err =>{
+                            fs.writeFile("", html, err =>{
                                 if(err) throw err
                             })
                        }
@@ -128,5 +128,4 @@ createEmployee().then(response =>{
         })
     }
     })
-
 })
