@@ -25,4 +25,25 @@ function createEmployee(){
             message: "Email:",
             name:"email"
         }]
-    )}
+)}
+
+//added  manager questions
+function createManager(){
+        return inquirer.prompt(
+            {
+                type:"input",
+                message:"Office Number:",
+                name:"office"  
+            }
+        )
+}
+
+// added emplyeed intern vs enginneer questions
+function employeeType(){
+        return inquirer.prompt(
+        {type:"list",
+        choices: ["Intern", "Engineer"],
+        name: "Employee-Role"
+        }
+    )
+    }
