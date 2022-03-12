@@ -81,3 +81,52 @@ function finishEmployees(){
         }
     )
 } 
+
+//creates function for create employee
+
+createEmployee().then(response =>{
+
+    createManager().then(managerAnswer =>{
+        const {name, id , email} = response
+        const manager = new Manager(name, id, email, managerAnswer.office)
+        employeeArray.push(manager)
+        newEmployees()
+
+        function newEmployees(){
+        employeeType().then(EmployeeType =>{
+
+            createEmployee().then(Employeeinfo =>{
+
+                employeeByRole(EmployeeType).then(data =>{
+                    console.log(data)
+                    const {name, id, email} = Employeeinfo
+                    switch(EmployeeType["Employee-Role"]){
+                        case "Intern": 
+                        const intern = new Intern(name, id, email, data.school)
+                        employeeArray.push(intern)
+                        break;
+
+                        case "Engineer": 
+                        const engineer = new Engineer(name, id, email, data.github)
+                        employeeArray.push(engineer)
+                        break;
+                    }
+
+                   finishEmployees().then(promptAnswer =>{
+                       if(promptAnswer.continue){
+                           newEmployees()
+                       }
+                       else{
+                            const html = render(employeeArray)
+                            fs.writeFile("output/index.html", html, err =>{
+                                if(err) throw err
+                            })
+                       }
+                   })
+                })
+            })
+        })
+    }
+    })
+
+})
