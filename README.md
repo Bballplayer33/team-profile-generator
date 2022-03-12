@@ -1,7 +1,7 @@
 # Team Generator                
        
 ## Description
- 
+ This app takes input from an employee and list their job title based on repenses. Then displays all team members information on a web page.
 
 ## Table of Contents
  * [Installation](#installation)
@@ -16,7 +16,7 @@ run npm index
         
         
 ## Usage
-
+ Given the employees role they will answer a set of questions that will produce a list of employees and their roles.
    
    
 ## Demonstration
@@ -27,6 +27,6 @@ run npm index
         
 ## Questions?
 * [Earl Adams](https://github.com/Bballplayer33)
-* stembreit@gmail.com
+* earladams2000@gmail.com
         
  If you have any additional question feel free to message or email me.
