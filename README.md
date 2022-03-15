@@ -21,6 +21,7 @@ run npm index
    
 ## Demonstration
  [Video for working application](https://drive.google.com/file/d/1Curbx-jfHpvc9JFsaIeVjkX1WBv7q03p/view?usp=sharing)
+       Created HTML is located in the dist file. 
 
 ## Tests
  run node index.js in order to use the application after running the npm install
